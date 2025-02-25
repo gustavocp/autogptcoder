@@ -1,0 +1,158 @@
+Iniciando logs...
+🚀 Iteração 1: Gerando código para 'Gera uma api em nodejs/javascript que tem um metodo ping e retorna um pong e na mesma api crie um método /socket que vai usar socket.io pra emitir um pong'...
+Prompt gerado:
+Escreva um código javascript válido que resolva o seguinte objetivo: Gera uma api em nodejs/javascript que tem um metodo ping e retorna um pong e na mesma api crie um método /socket que vai usar socket.io pra emitir um pong. Retorne apenas o código, sem comentários ou explicações extras.
+⏱ Requisição ao LLM: 242.79s, Tokens do prompt: 49
+⏱ Resposta do LLM: 242.79s, Tokens da resposta: 2160
+💾 Código salvo em: tests\interacao1.20250224T014135738Z.js
+📝 Código gerado:
+----------------------------------------------------
+// Criação da API com o método ping
+
+app.use(express.static(__dirname + '/public'));
+
+const server = http.createServer(app);
+server.listen(3000);
+
+app.get('/ping', (req, res) => {
+  res.json('pong');
+});
+----------------------------------------------------
+🔍 Código detectado como javascript
+🔍 Testando código...
+❌ Erro de compilação/execução:
+C:\Projetos\node-llm-assistant-free\temp_test.js:3
+app.use(express.static(__dirname + '/public'));
+^
+
+ReferenceError: app is not defined
+    at Object.<anonymous> (C:\Projetos\node-llm-assistant-free\temp_test.js:3:1)
+    at Module._compile (node:internal/modules/cjs/loader:1469:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+    at Module.load (node:internal/modules/cjs/loader:1288:32)
+    at Module._load (node:internal/modules/cjs/loader:1104:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.18.2
+
+Solicitando correção (usando o último código, o erro e o objetivo)...
+DEBUG: Correction prompt enviado (veja nos logs).
+❌ Código corrigido muito curto (menos de 5 linhas). Solicitando nova correção...
+⏱ Requisição ao LLM: 21.15s, Tokens do prompt: 58
+⏱ Resposta do LLM: 21.15s, Tokens da resposta: 292
+💾 Código salvo em: tests\interacao1.20250224T014202064Z.js
+📝 Código gerado:
+----------------------------------------------------
+// Importa socket.io
+const io = require('socket.io');
+
+// Configuração do servidor de ping-pong
+const PORT = 3000;
+const server = io.listen(PORT);
+
+// Método para simular o ping
+server.on('ping', (request, callback) => {
+    callback(null, 'Pong');
+});
+
+// Método que envia um pong ao cliente
+server.on('/socket', (request, callback) => {
+    io.emit('pong', null);
+});
+----------------------------------------------------
+🚀 Iteração 2: Gerando código para 'Gera uma api em nodejs/javascript que tem um metodo ping e retorna um pong e na mesma api crie um método /socket que vai usar socket.io pra emitir um pong'...
+Prompt gerado:
+Baseado no objetivo: Gera uma api em nodejs/javascript que tem um metodo ping e retorna um pong e na mesma api crie um método /socket que vai usar socket.io pra emitir um pong
+
+Último código gerado:
+// Importa socket.io
+const io = require('socket.io');
+
+// Configuração do servidor de ping-pong
+const PORT = 3000;
+const server = io.listen(PORT);
+
+// Método para simular o ping
+server.on('ping', (request, callback) => {
+    callback(null, 'Pong');
+});
+
+// Método que envia um pong ao cliente
+server.on('/socket', (request, callback) => {
+    io.emit('pong', null);
+});
+
+Último erro observado:
+C:\Projetos\node-llm-assistant-free\temp_test.js:3
+app.use(express.static(__dirname + '/public'));
+^
+
+ReferenceError: app is not defined
+    at Object.<anonymous> (C:\Projetos\node-llm-assistant-free\temp_test.js:3:1)
+    at Module._compile (node:internal/modules/cjs/loader:1469:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+    at Module.load (node:internal/modules/cjs/loader:1288:32)
+    at Module._load (node:internal/modules/cjs/loader:1104:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.18.2
+
+
+Por favor, gere uma nova versão do código que corrija os erros e atenda ao objetivo. Retorne apenas o código.
+⏱ Requisição ao LLM: 35.91s, Tokens do prompt: 144
+⏱ Resposta do LLM: 35.91s, Tokens da resposta: 372
+💾 Código salvo em: tests\interacao2.20250224T014242993Z.js
+📝 Código gerado:
+----------------------------------------------------
+const express = require('express');
+const http = require('http');
+
+// Importa socket.io
+const io = require('socket.io');
+
+// Configuração do servidor de ping-pong
+const PORT = 3000;
+const server = io.listen(PORT);
+
+// Método para simular o ping
+server.on('ping', (request, callback) => {
+    callback(null, 'Pong');
+});
+
+// Método que envia um pong ao cliente
+server.on('/socket', (request, callback) => {
+    io.emit('pong', null);
+});
+
+const app = express();
+
+app.use(express.static(__dirname + '/public'));
+
+const PORT = 3000;
+http.createServer(app).listen(PORT, () => {
+    console.log(`Server running at port ${PORT}`);
+});
+----------------------------------------------------
+🔍 Código detectado como javascript
+🔍 Testando código...
+❌ Erro de compilação/execução:
+C:\Projetos\node-llm-assistant-free\temp_test.js:25
+const PORT = 3000;
+      ^
+
+SyntaxError: Identifier 'PORT' has already been declared
+    at wrapSafe (node:internal/modules/cjs/loader:1378:20)
+    at Module._compile (node:internal/modules/cjs/loader:1428:41)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+    at Module.load (node:internal/modules/cjs/loader:1288:32)
+    at Module._load (node:internal/modules/cjs/loader:1104:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.18.2
+
+Solicitando correção (usando o último código, o erro e o objetivo)...
+DEBUG: Correction prompt enviado (veja nos logs).
+❌ Código corrigido muito curto (menos de 5 linhas). Solicitando nova correção...

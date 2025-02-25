@@ -1,0 +1,1 @@
+❌ Erro: resposta vazia do LLM.

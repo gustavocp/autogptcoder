@@ -1,0 +1,13 @@
+Month,VendorID,Amount
+   January,384,20000
+   February,678,30000
+   March,987,25000
+   April,132,30000
+   May,107,28000
+   June,164,30000
+   July,131,28000
+   August,965,28000
+   September,121,28000
+   October,147,28000
+   November,132,28000
+   December,172,28000

@@ -1,0 +1,24 @@
+{
+  "name": "node-llm-assistant-free",
+  "version": "1.0.0",
+  "dependencies": {
+    "@lmstudio/sdk": "^0.4.7",
+    "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.20.3",
+    "canvas": "^3.1.0",
+    "child_process": "^1.0.2",
+    "express": "^4.21.2",
+    "faiss-node": "^0.5.1",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "llama-node": "^0.1.6",
+    "lmstudio": "^0.0.22",
+    "node-fetch": "^3.3.2",
+    "path": "^0.12.7",
+    "socket.io": "^4.8.1",
+    "vm": "^0.1.0",
+    "ws": "^8.18.1"
+  }
+}
